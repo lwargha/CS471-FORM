@@ -364,7 +364,7 @@ section {
           left: 30px;
           margin-top: 45px;
           flex-wrap: wrap;
-          width: 550px;
+          max-width: 550px;
           margin-left: auto;
           margin-right: auto; }
           .container-all .slider-container .wrap-steps .single-step .credit-options-all .tax-option:hover {
@@ -416,7 +416,7 @@ section {
           left: 30px;
           margin-top: 45px;
           flex-wrap: wrap;
-          width: 550px;
+          max-width: 550px;
           margin-left: auto;
           margin-right: auto; }
           .container-all .slider-container .wrap-steps .single-step .home-options-all h2,
@@ -467,7 +467,7 @@ section {
           left: 30px;
           margin-top: 45px;
           flex-wrap: wrap;
-          width: 550px;
+          max-width: 550px;
           margin-left: auto;
           margin-right: auto; }
           .container-all .slider-container .wrap-steps .single-step .employment-options-all h2,
@@ -515,7 +515,7 @@ section {
               color: #7d8d9a; }
         .container-all .slider-container .wrap-steps .single-step .address-box {
           margin-top: 25px;
-          width: 550px;
+          max-width: 550px;
           margin-left: auto;
           margin-right: auto;
           text-align: left; }
