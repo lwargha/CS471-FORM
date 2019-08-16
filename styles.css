@@ -71,6 +71,8 @@
   margin: 0;
   padding: 0; }
 
+@-ms-viewport {
+  width: device-width; }
 html,
 body {
   height: 100%;
