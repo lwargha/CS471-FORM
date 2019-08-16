@@ -1,4 +1,8 @@
 @media only screen and (max-width: 700px) {
+  body {
+    max-width: 100vw !important;
+    overflow-x: hidden; }
+
   input {
     margin: 0 15px;
     min-width: 280px !important;
@@ -118,7 +122,9 @@ section {
 .container-all {
   height: 100%; }
   .container-all header {
-    margin-top: 21px; }
+    margin-top: 21px;
+    position: sticky;
+    top: 0; }
     .container-all header img {
       width: 260px;
       height: auto; }

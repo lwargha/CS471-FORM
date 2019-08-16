@@ -35,10 +35,6 @@ var db = firebase.firestore();
 //   return confirmationMessage;
 // };
 
-function toggleBulletCompleted(_bulletNum) {
-  console.log(_bulletNum);
-}
-
 function checkForStepCompletion(el, stepNumber, allowed) {
   //some business logic to check inputs here, then set allowed to true
   if (allowed) {
@@ -275,7 +271,7 @@ function buildObj(prop, value) {
 
 function updateDatabase() {
   var server = new XMLHttpRequest();
-  server.open('POST', 'http://127.0.0.1:5500/test.txt');
+  server.open('POST', '/post.php');
   server.setRequestHeader('Content-Type', 'application/json');
   server.onload = function () {
     if (server.status === 200) {
