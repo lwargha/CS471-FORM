@@ -123,13 +123,12 @@ section {
 .container-all {
   height: 100%; }
   .container-all header {
-    margin-top: 21px;
     position: fixed;
     top: 0;
     margin-right: auto;
     margin-left: auto;
     width: 100vw;
-    margin-bottom: 50px;
+    height: 80px;
     background: white;
     z-index: 3; }
     .container-all header img {
@@ -325,6 +324,38 @@ section {
             margin-left: 18px;
             font-size: 25px;
             color: #7d8d9a; }
+        .container-all .slider-container .wrap-steps .single-step .active-taxable-income {
+          cursor: pointer;
+          transition: all .4s; }
+          .container-all .slider-container .wrap-steps .single-step .active-taxable-income .taxable-income-circle {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); }
+          .container-all .slider-container .wrap-steps .single-step .active-taxable-income span {
+            color: #425563; }
+          .container-all .slider-container .wrap-steps .single-step .active-taxable-income path {
+            fill: #FF6900; }
+        .container-all .slider-container .wrap-steps .single-step .taxable-income-options-all .tax-option:hover {
+          cursor: pointer;
+          transition: all .4s; }
+          .container-all .slider-container .wrap-steps .single-step .taxable-income-options-all .tax-option:hover .taxable-income-circle {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); }
+          .container-all .slider-container .wrap-steps .single-step .taxable-income-options-all .tax-option:hover span {
+            color: #425563; }
+          .container-all .slider-container .wrap-steps .single-step .taxable-income-options-all .tax-option:hover path {
+            fill: #FF6900; }
+        .container-all .slider-container .wrap-steps .single-step .taxable-income-options-all .tax-option {
+          margin-right: 40px; }
+          .container-all .slider-container .wrap-steps .single-step .taxable-income-options-all .tax-option .taxable-income-circle {
+            background: white;
+            border-radius: 50%;
+            width: 41px;
+            height: 41px; }
+            .container-all .slider-container .wrap-steps .single-step .taxable-income-options-all .tax-option .taxable-income-circle svg {
+              margin: auto; }
+        .container-all .slider-container .wrap-steps .single-step .taxable-income-options-all span {
+          margin-top: 8px;
+          margin-left: 10px;
+          font-size: 25px;
+          color: #7d8d9a; }
         .container-all .slider-container .wrap-steps .single-step .credit-options-all {
           position: relative;
           left: 30px;

@@ -75,13 +75,14 @@ section {
     height: 100%;
 
     header {
-        margin-top: 21px;
+        // margin-top: 21px;
         position: fixed;
         top: 0;
         margin-right: auto;
         margin-left: auto;
         width: 100vw;
-        margin-bottom: 50px;
+        height: 80px;
+        // margin-bottom: 50px;
         background: white;
         z-index: 3;
         // height: 50px;
@@ -230,7 +231,7 @@ section {
                     margin-right: auto;
                     height: 170px;
                     justify-content: center;
-                   
+
 
                     h2,
                     h4 {
@@ -364,6 +365,68 @@ section {
                     span {
                         margin-top: 8px;
                         margin-left: 18px;
+                        font-size: 25px;
+                        color: #7d8d9a;
+                    }
+                }
+
+                .active-taxable-income { 
+
+                    cursor: pointer;
+                    transition: all .4s;
+
+                   
+                        .taxable-income-circle { 
+                            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+                        }
+                    
+
+                    span {
+                        color: #425563;
+                    }
+
+                    path {
+                        fill: #FF6900;
+                    }
+            
+                }
+                .taxable-income-options-all {
+
+                    .tax-option:hover { 
+                        cursor: pointer;
+                        transition: all .4s;
+
+                       
+                            .taxable-income-circle { 
+                                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+                            }
+                        
+
+                        span {
+                            color: #425563;
+                        }
+
+                        path {
+                            fill: #FF6900;
+                        }
+                }
+                    .tax-option {
+                        margin-right: 40px;
+                        .taxable-income-circle {
+                            background: white;
+                            border-radius: 50%;
+                            width: 41px;
+                            height: 41px;
+
+                            svg {
+                                margin: auto;
+                            }
+                        }
+                    }
+
+                    span {
+                        margin-top: 8px;
+                        margin-left: 10px;
                         font-size: 25px;
                         color: #7d8d9a;
                     }

@@ -106,12 +106,12 @@ function checkElectricBill(el, isEnough) {
 
 function checkTaxableIncome(el, isAllowed) {
 
-  if (document.getElementsByClassName('active-house-type')[2]) {
-    document.getElementsByClassName('active-house-type')[2].classList.remove('active-house-type');
+  if (document.getElementsByClassName('active-taxable-income')[0]) {
+    document.getElementsByClassName('active-taxable-income')[0].classList.remove('active-taxable-income');
   }
 
   if (isAllowed) {
-    el.classList.add('active-house-type');
+    el.classList.add('active-taxable-income');
     window.location = `#slider-5`;
     updateUiBaseOnStep(5);
   }
