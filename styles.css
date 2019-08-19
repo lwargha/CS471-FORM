@@ -604,5 +604,42 @@ section {
     -moz-transform: translate(8px); }
   100% {
     -moz-transform: translate(0px); } }
+.pac-container,
+.pac-item {
+  font-size: 18px; }
+
+.pac-container {
+  background: red;
+  z-index: 99999; }
+
+.pac-item-query {
+  font-size: 18px; }
+
+#map {
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  width: 700px; }
+
+.correct-roof {
+  background: #ff6900;
+  width: 300px;
+  height: 100px;
+  margin: 15px auto;
+  border-radius: 20px;
+  color: white; }
+  .correct-roof h3 {
+    font-size: 25px; }
+  .correct-roof .maps-address span {
+    text-align: center;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    font-size: 22px; }
+  .correct-roof .maps-address .arrow {
+    margin-left: 25px;
+    font-size: 40px; }
+
+.gmnoprint {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */

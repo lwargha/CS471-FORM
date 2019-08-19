@@ -149,38 +149,18 @@ function checkEmploymentStatus(el, isEligible) {
 
 function validateAddress() {
   var street = document.getElementById('street-address').value;
-  var zip = document.getElementById('zip').value
-  if (street === '' || street === undefined || zip === '' || zip === undefined) {
+  if (street === '' || street === undefined) {
     if (street === '' || street === undefined) {
       document.getElementById('error-address').classList.remove('hide');
       document.getElementById('street-address').classList.add('shakeError');
       setTimeout(() => {
         document.getElementById('street-address').classList.remove('shakeError');
-      }, 300);
-    } else {
-      document.getElementById('error-zip').classList.remove('hide');
-      document.getElementById('zip').classList.add('shakeError');
-      setTimeout(() => {
-        document.getElementById('zip').classList.remove('shakeError');
-      }, 300);
-    }
-  } else {
-    var reg = new RegExp("^[0-9]{5}([- /]?[0-9]{4})?$");
-    if (!reg.exec(zip)) {
-      document.getElementById('zip').classList.add('shakeError');
-      document.getElementById('error-zip').classList.remove('hide');
-      setTimeout(() => {
-        document.getElementById('zip').classList.remove('shakeError');
-      }, 300);
+      }, 300); } 
     } else {
       window.location = `#slider-8`;
       updateUiBaseOnStep(8);
-      document.getElementById('error-zip').classList.add('hide');
       document.getElementById('error-address').classList.add('hide');
     }
-
-  }
-
 }
 
 function validateUserProfile() {
@@ -280,4 +260,8 @@ function updateDatabase() {
     }
   };
   server.send({"Name": "Lucas"});
+}
+
+document.getElementById('street-address').onfocus = function () { 
+  document.getElementById('street-address').removeAttribute('readonly');
 }

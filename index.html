@@ -48,7 +48,6 @@
                     <div class="single-line"></div>
                     <a id="step-8" onclick="checkForStepCompletion(this, 8, false)"
                         class="single-bullet container center"><span>8</span></a>
-
                 </div>
             </div>
         </div>
@@ -456,19 +455,22 @@
                     <h2>What is your address?</h2>
                     <div class="container address-box col">
                         <span class="span-responsive">Street Address</span>
-                        <input id="street-address" type="text">
+                        <input  placeholder="" id="street-address" type="search" autocomplete="anyrandomstring">
                         <span class="hide" style="color: #ff6900; margin-top: -13px; margin-left: 15px;"
                             id="error-address">Please, enter a valid address</span>
-                        <span class="span-responsive">ZIP Code</span>
-                        <input id="zip" type="text">
-                        <span class="hide" style="color: #ff6900; margin-top: -5px; margin-left: 15px;"
-                            id="error-zip">Please, enter a valid ZIP</span>
+                        
                     </div>
+                    <div id="map">
+
+                    </div>
+                    <div class="container col center correct-roof">
+                        <h3>Is this your roof?</h3>
                     <div style="margin-bottom: 20px !important;" onclick="validateAddress()"
-                        class="container row center after-address">
-                        <span>Next</span>
-                        <span class="arrow">></span>
+                        class="container row center maps-address">
+                        <span>Yes</span>
+                        <span class="arrow"> > </span>
                     </div>
+                </div>
                 </section>
                 <section class="container col single-step">
                     <h2>Almost there!</h2>
@@ -513,6 +515,9 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNn7skQIHjFTo0FDf4UKRCk2uP6UpgopU&libraries=places&callback=setAutoComplete"
+        async defer></script>
 </body>
 
 </html>

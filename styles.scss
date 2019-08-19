@@ -7,9 +7,9 @@
     padding: 0;
 }
 
-@-ms-viewport{
+@-ms-viewport {
     width: device-width;
-  }
+}
 
 html,
 body {
@@ -76,7 +76,7 @@ section {
 }
 
 .container-all {
-  
+
 
     header {
         position: fixed;
@@ -168,19 +168,16 @@ section {
 
     .slider-container {
         width: 100%;
-        // height: 600px;
         margin-left: auto;
         margin-right: auto;
         overflow-x: hidden;
         text-align: center;
         margin-top: 70px;
         background-color: #f5f6f7;
-        // height: 100%;
 
         .wrap-steps {
             width: 900%;
             overflow: hidden;
-            // height: 100%;
             position: relative;
             transition: left .4s;
 
@@ -189,8 +186,6 @@ section {
                 height: 49px;
                 border-radius: 6px;
                 background-color: #3dca59;
-                // margin-left: auto;
-                // margin-right: auto;
                 color: white !important;
                 margin-top: 20px;
                 align-self: center;
@@ -219,7 +214,7 @@ section {
                 min-width: 100vw;
                 width: 100vw;
                 float: left;
-                padding: 0;       
+                padding: 0;
                 margin-bottom: 50px;
 
                 #error-home-type {
@@ -368,16 +363,16 @@ section {
                     }
                 }
 
-                .active-taxable-income { 
+                .active-taxable-income {
 
                     cursor: pointer;
                     transition: all .4s;
 
-                   
-                        .taxable-income-circle { 
-                            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                        }
-                    
+
+                    .taxable-income-circle {
+                        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+                    }
+
 
                     span {
                         color: #425563;
@@ -386,19 +381,20 @@ section {
                     path {
                         fill: #FF6900;
                     }
-            
+
                 }
+
                 .taxable-income-options-all {
 
-                    .tax-option:hover { 
+                    .tax-option:hover {
                         cursor: pointer;
                         transition: all .4s;
 
-                       
-                            .taxable-income-circle { 
-                                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                            }
-                        
+
+                        .taxable-income-circle {
+                            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+                        }
+
 
                         span {
                             color: #425563;
@@ -407,9 +403,11 @@ section {
                         path {
                             fill: #FF6900;
                         }
-                }
+                    }
+
                     .tax-option {
                         margin-right: 40px;
+
                         .taxable-income-circle {
                             background: white;
                             border-radius: 50%;
@@ -538,7 +536,6 @@ section {
                     .home-type-circle {
                         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
                     }
-
 
                     h2,
                     h4 {
@@ -842,4 +839,62 @@ section {
     100% {
         -moz-transform: translate(0px);
     }
+}
+
+
+// styling the map 
+.pac-container,
+.pac-item {
+    font-size: 18px;
+}
+
+.pac-container { 
+    background: red;
+    z-index: 99999;
+}
+
+.pac-item-query {
+    font-size: 18px;
+}
+
+#map {
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    width: 700px;
+}
+
+
+    .correct-roof {
+        background: #ff6900;
+        width: 300px;
+        height: 100px;
+        margin: 15px auto;
+        border-radius: 20px;
+        // color: #425563;
+        color: white;
+        h3  {
+            font-size: 25px;
+            // color: #425563;
+        }
+        .maps-address {
+            
+            span {
+                text-align: center;
+                margin-top: auto !important;
+                margin-bottom: auto !important;
+                font-size: 22px;
+               
+            }
+
+            .arrow {
+                margin-left: 25px;
+                font-size: 40px;
+            }
+    }
+
+}
+
+.gmnoprint {
+    display: none;
 }
