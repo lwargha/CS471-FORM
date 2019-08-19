@@ -84,7 +84,7 @@ section {
         margin-right: auto;
         margin-left: auto;
         width: 100vw;
-        height: 80px;
+        height: 70px;
         background: white;
         z-index: 3;
 
@@ -215,7 +215,8 @@ section {
                 width: 100vw;
                 float: left;
                 padding: 0;
-                // margin-bottom: 50px;
+                margin-top: 50px;
+                margin-bottom: -30px;
 
                 #error-home-type {
                     margin-bottom: 40px;
