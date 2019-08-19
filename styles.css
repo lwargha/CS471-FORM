@@ -217,8 +217,7 @@ section {
       min-width: 100vw;
       width: 100vw;
       float: left;
-      padding: 0;
-      margin-bottom: 50px; }
+      padding: 0; }
       .container-all .slider-container .wrap-steps .single-step #error-home-type {
         margin-bottom: 40px;
         background: white;
@@ -609,7 +608,6 @@ section {
   font-size: 18px; }
 
 .pac-container {
-  background: red;
   z-index: 99999; }
 
 .pac-item-query {
