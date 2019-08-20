@@ -569,8 +569,8 @@ section {
         margin-right: auto;
         margin-left: auto;
         position: relative;
-        height: 0;
-        width: 100%; }
+        width: 100%;
+        padding-bottom: 56.25%; }
       .container-all .slider-container .wrap-steps .message-end .video-iframe {
         overflow: hidden;
         padding-bottom: 56.25%;

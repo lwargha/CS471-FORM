@@ -258,13 +258,9 @@ function buildObj(prop, value) {
 
 function updateDatabase() {
   var server = new XMLHttpRequest();
-  server.open('POST', '/post.php');
-  server.setRequestHeader('Content-Type', 'application/json');
+  server.open('POST', 'https://hooks.zapier.com/hooks/catch/1681335/obltmf3/');
   server.onload = function () {
-    if (server.status === 200) {
-    } else if (server.status !== 200) {
-      console.log("success");
-    }
+    console.log("success");
   };
   server.send({"Name": "Lucas"});
 }

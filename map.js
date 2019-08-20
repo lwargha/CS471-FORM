@@ -28,7 +28,6 @@ function setAutoComplete() {
 
         google.maps.event.addListener(autocomplete, 'place_changed', function () {
             place = autocomplete.getPlace();
-            console.log('here');
             document.getElementById('hide-map').classList.remove('hide');
             if (place.geometry.viewport) {
                 map.fitBounds(place.geometry.viewport);
@@ -40,5 +39,4 @@ function setAutoComplete() {
             marker.setPosition(place.geometry.location);
             marker.setVisible(true);
         });
-
 }
