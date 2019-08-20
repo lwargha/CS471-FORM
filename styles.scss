@@ -21,7 +21,7 @@ body {
     margin: 0;
     padding: 0;
     background: #f5f6f7;
-   
+
 }
 
 :root {
@@ -76,11 +76,13 @@ section {
     width: 40px !important;
 }
 
+.fix-h2 {}
+
 .container-all {
 
 
     header {
-        position: fixed;
+        position: sticky;
         top: 0;
         margin-right: auto;
         margin-left: auto;
@@ -98,7 +100,7 @@ section {
     .steps {
         background-color: #ff6900;
         height: 70px;
-        position: fixed;
+        position: sticky;
         top: 70px;
         left: 0px;
         width: 100%;
@@ -173,16 +175,13 @@ section {
         margin-right: auto;
         overflow-x: hidden;
         text-align: center;
-        margin-top: 70px;
-        // background-color: #f5f6f7;
 
         .wrap-steps {
             width: 900%;
             overflow: hidden;
             position: relative;
+            margin-top: 140px;
             transition: left .4s;
-            
-            // height: 100vh;
 
             .after-address {
                 width: 166px;
@@ -217,10 +216,6 @@ section {
                 min-width: 100vw;
                 width: 100vw;
                 float: left;
-                padding: 0;
-                // height: 100%;
-                margin-top: 80px;
-                margin-bottom: -30px;
                 overflow: auto;
 
                 #error-home-type {
@@ -260,6 +255,7 @@ section {
 
                     h2,
                     h4 {
+                        margin-block-start: 0;
                         margin: 0 30px;
                         color: #ff6900
                     }
@@ -275,7 +271,7 @@ section {
                 }
 
                 h2 {
-                    // margin-top: 111px;
+                    margin-top: 30px;
                     font-size: 35px;
                     font-weight: normal;
                     font-style: normal;
@@ -754,38 +750,47 @@ section {
 }
 
 #slider-1:target~.wrap-steps {
+   top:0;
     left: 0px;
 }
 
 #slider-2:target~.wrap-steps {
+    top: 0;
     left: -100vw;
 }
 
 #slider-3:target~.wrap-steps {
+  
     left: -200vw;
 }
 
 #slider-4:target~.wrap-steps {
+    // top: 70px;
     left: -300vw;
 }
 
 #slider-5:target~.wrap-steps {
+    // top: 70px;
     left: -400vw;
 }
 
 #slider-6:target~.wrap-steps {
+    // top: 70px;
     left: -500vw;
 }
 
 #slider-7:target~.wrap-steps {
+    // top: 70px;
     left: -600vw;
 }
 
 #slider-8:target~.wrap-steps {
+    // top: 70px;
     left: -700vw;
 }
 
 #slider-9:target~.wrap-steps {
+    // top: 80px;
     left: -800vw;
 }
 
@@ -854,7 +859,7 @@ section {
     font-size: 18px;
 }
 
-.pac-container { 
+.pac-container {
     z-index: 99999;
 }
 
@@ -870,32 +875,31 @@ section {
 }
 
 
-    .correct-roof {
-        background: #ff6900;
-        width: 300px;
-        height: 100px;
-        margin: 15px auto;
-        border-radius: 20px;
-        // color: #425563;
-        color: white;
-        h3  {
-            font-size: 25px;
-            // color: #425563;
-        }
-        .maps-address {
-            
-            span {
-                text-align: center;
-                margin-top: auto !important;
-                margin-bottom: auto !important;
-                font-size: 22px;
-               
-            }
+.correct-roof {
+    background: #ff6900;
+    width: 300px;
+    height: 100px;
+    margin: 15px auto;
+    border-radius: 20px;
+    color: white;
 
-            .arrow {
-                margin-left: 25px;
-                font-size: 40px;
-            }
+    h3 {
+        font-size: 25px;
+    }
+
+    .maps-address {
+
+        span {
+            text-align: center;
+            margin-top: auto !important;
+            margin-bottom: auto !important;
+            font-size: 22px;
+        }
+
+        .arrow {
+            margin-left: 25px;
+            font-size: 40px;
+        }
     }
 
 }
