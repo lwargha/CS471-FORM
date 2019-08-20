@@ -65,6 +65,12 @@ function checkTheBox(el, hasOwnHouse) {
 }
 
 function updateUiBaseOnStep(stepNumber) {
+  if (stepNumber === 9) {
+    document.getElementById('steps').classList.add('hide');
+
+  } else { 
+    document.getElementById('steps').classList.remove('hide');
+  }
   document.getElementsByClassName('active')[0].classList.remove('active');
   document.getElementById(`step-${stepNumber}`).classList.add('active');
   if (stepNumber !== 1)
@@ -217,6 +223,7 @@ function validateUserProfile() {
   }
   if (validated) {
     window.location = `#slider-9`;
+    document.getElementById('steps').classList.add('hide');
     document.getElementsByClassName('active')[0].classList.remove('active');
     document.getElementById(`step-8`).innerHTML = `<svg style="margin-top: 6px;" xmlns="http://www.w3.org/2000/svg" width="17" height="14" viewBox="0 0 17 14">
     <path fill="#FFF" fill-rule="nonzero"

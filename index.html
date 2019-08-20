@@ -19,7 +19,7 @@
         <header class="container center top-header-marketing">
             <img src="./img/shine-solar-color.svg" alt="">
         </header>
-        <div class="container center steps">
+        <div id="steps" class="container center steps">
             <div class="page-bullets container center">
                 <div class="container row bullet-line-container">
                     <a id="step-1" onclick="checkForStepCompletion(this, 1, true)"
@@ -290,8 +290,7 @@
                             </div>
                             <span>Yes</span>
                         </div>
-                        <div onclick="checkTaxableIncome(this, true)"
-                            class="container tax-option row">
+                        <div onclick="checkTaxableIncome(this, true)" class="container tax-option row">
                             <div class="container col taxable-income-circle smaller-bullet">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
                                     <path fill="#D3D8DC" fill-rule="nonzero"
@@ -455,22 +454,25 @@
                     <h2>What is your address?</h2>
                     <div class="container address-box col">
                         <span class="span-responsive">Street Address</span>
-                        <input  placeholder="" id="street-address" type="search" autocomplete="off">
+                        <input style="width: 600px;" placeholder="" id="street-address" type="search"
+                            autocomplete="off">
                         <span class="hide" style="color: #ff6900; margin-top: -13px; margin-left: 15px;"
                             id="error-address">Please, enter a valid address</span>
-                        
-                    </div>
-                    <div id="map">
 
                     </div>
-                    <div class="container col center correct-roof">
-                        <h3>Is this your roof?</h3>
-                    <div style="margin-bottom: 20px !important;" onclick="validateAddress()"
-                        class="container row center maps-address">
-                        <span>Yes</span>
-                        <span class="arrow"> > </span>
+                    <div id="hide-map" class="hide">
+                        <h3 class="roof-top">Is this your roof? Move the marker to your rooftop.</h3>
+                        <div id="map">
+
+                        </div>
+                        <div class="container col correct-roof hover">
+
+                            <div onclick="validateAddress()" class="container row center maps-address">
+                                <span>Next</span>
+                                <span class="arrow"> > </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
                 </section>
                 <section class="container col single-step">
                     <h2>Almost there!</h2>
@@ -488,7 +490,7 @@
                         <input id="phone" type="text">
                         <span class="hide" style="color: #ff6900; margin-top: -5px; margin-left: 15px;"
                             id="error-phone">Please, enter a valid phone number</span>
-                        <div onclick="validateUserProfile()" style="  margin-bottom: 20px !important;"
+                        <div onclick="validateUserProfile()" style="margin-bottom: 20px !important;"
                             class="container row center after-address">
                             <svg style="margin-right: 20px; margin-top: auto; margin-bottom: auto;"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20">
@@ -501,14 +503,16 @@
                 </section>
                 <section class="container col single-step">
                     <div class="container col message-end">
-                        <h4>WELL DONE, YOU MADE IT!</h4>
+                        <h4>YOU QUALIFY FOR SOLAR!</h4>
+                        <div class="container center video-iframe">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube-nocookie.com/embed/6AtR9-RVxD4?showinfo=0"
+                                allowfullscreen></iframe>
+                        </div>
                         <span class="top-finish">
-                            Our agents are looking at your info and will contact you shortly!
+                            Schedule an appointment to go over your free SOLAR SAVINGS REPORT
                         </span>
-
-                        <span class="bottom-finish">
-                            Check out ShineSolar.com while you wait.
-                        </span>
+                        <div class="container self-schedule"></div>
                     </div>
                 </section>
             </div>
@@ -516,7 +520,8 @@
     </div>
     <script src="script.js"></script>
     <script src="map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNn7skQIHjFTo0FDf4UKRCk2uP6UpgopU&libraries=places&callback=setAutoComplete"
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNn7skQIHjFTo0FDf4UKRCk2uP6UpgopU&libraries=places&callback=setAutoComplete"
         async defer></script>
 </body>
 
