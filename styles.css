@@ -561,11 +561,29 @@ section {
           width: 500px; }
     .container-all .slider-container .wrap-steps .message-end {
       margin-top: 30px;
-      min-width: 300px;
-      max-width: 744px;
+      max-width: 100vw;
       align-self: center;
       text-align: center;
       padding: 0 50px; }
+      .container-all .slider-container .wrap-steps .message-end .self-schedule {
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+        height: 0;
+        width: 100%; }
+      .container-all .slider-container .wrap-steps .message-end .video-iframe {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+        min-width: 300px;
+        max-width: 744px; }
+        .container-all .slider-container .wrap-steps .message-end .video-iframe iframe {
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          position: absolute; }
       .container-all .slider-container .wrap-steps .message-end h4 {
         margin-top: -25px !important;
         font-size: 45px;
