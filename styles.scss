@@ -216,6 +216,7 @@ section {
                 width: 100vw;
                 float: left;
                 overflow: auto;
+                scroll-behavior: smooth;
 
                 #error-home-type {
                     margin-bottom: 40px;

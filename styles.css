@@ -249,7 +249,8 @@ section {
       min-width: 100vw;
       width: 100vw;
       float: left;
-      overflow: auto; }
+      overflow: auto;
+      scroll-behavior: smooth; }
       .container-all .slider-container .wrap-steps .single-step #error-home-type {
         margin-bottom: 40px;
         background: white;

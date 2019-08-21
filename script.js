@@ -1,39 +1,12 @@
-var firebaseConfig = {
-  apiKey: "AIzaSyD4HmZBiyy2fwm98xVCGUjqGBw6kV32wos",
-  authDomain: "shine-marketing-test.firebaseapp.com",
-  databaseURL: "https://shine-marketing-test.firebaseio.com",
-  projectId: "shine-marketing-test",
-  storageBucket: "shine-marketing-test.appspot.com",
-  messagingSenderId: "894757308372",
-  appId: "1:894757308372:web:dd08ec751cbed052"
-};
-
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-var db = firebase.firestore();
+window.onbeforeunload = function (e) {
 
-// window.onbeforeunload = function (e) {
+  this.console.log('User just tried closing window. Let us give him/her this confirmation message and send some data to the database');
 
-//   this.console.log('User just tried closing window. Let us give him/her this confirmation message and send some data to the database');
-//   var obj = {
-//     name: 'Adam',
-//     city: 'Rexburg',
-//     interested: true
-//   }
-
-//   // if (true) {
-//   //   db.collection("marketing-input").add(obj).then(function (docRef) {
-//   //       console.log("Document written with ID: ", docRef.id);
-//   //     })
-//   //     .catch(function (error) {
-//   //       console.error("Error adding document: ", error);
-//   //     });
-//   // }
-
-//   var confirmationMessage = "Exiting! :) ";
-//   (e || window.event).returnValue = confirmationMessage;
-//   return confirmationMessage;
-// };
+  var confirmationMessage = "Exiting! :) ";
+  (e || window.event).returnValue = confirmationMessage;
+  return confirmationMessage;
+};
 
 function checkForStepCompletion(el, stepNumber, allowed) {
   //some business logic to check inputs here, then set allowed to true
@@ -41,7 +14,6 @@ function checkForStepCompletion(el, stepNumber, allowed) {
     window.location = `#slider-${stepNumber}`;
     updateUiBaseOnStep(stepNumber);
   }
-
 }
 
 function checkTheBox(el, hasOwnHouse) {
@@ -61,6 +33,7 @@ function checkTheBox(el, hasOwnHouse) {
   } else {
     document.getElementById('house-img').classList.add('hide');
     document.getElementById('error-home').classList.remove('hide');
+    // window.location = `#error-home`;
     document.getElementById(`step-2`).setAttribute('onclick', `checkForStepCompletion(this, 2, false)`);
   }
 }
@@ -97,6 +70,7 @@ function checkHouseTypeBox(el, isAllowed, homeType) {
     document.getElementById('error-home-type').classList.add('hide');
   } else {
     document.getElementById('error-home-type').classList.remove('hide');
+    // window.location = `#error-home-type`;
   }
 }
 
@@ -140,6 +114,7 @@ function checkCreditScore(el, hasEnoughCredit, amount) {
     document.getElementById('error-credit-score').classList.add('hide');
   } else {
     document.getElementById('error-credit-score').classList.remove('hide');
+    // window.location = `#error-credit-score`;
   }
 
 }
@@ -238,15 +213,18 @@ function validateUserProfile() {
   }
   if (validated) {
     buildObj('personalInfo', {'firstName': firstName, 'lastName' : lastName, 'email' : email, 'phone' : phone})
+    
     window.location = `#slider-9`;
     document.getElementById('steps').classList.add('hide');
     document.getElementsByClassName('active')[0].classList.remove('active');
     document.getElementById('self-schedule').classList.remove('hide');
+    updateDatabase();
     document.getElementById(`step-8`).innerHTML = `<svg style="margin-top: 6px;" xmlns="http://www.w3.org/2000/svg" width="17" height="14" viewBox="0 0 17 14">
     <path fill="#FFF" fill-rule="nonzero"
         d="M16.056.626a1.455 1.455 0 0 0-2.035.309l-6.903 9.369-4.39-3.512A1.458 1.458 0 0 0 .907 9.067l5.573 4.459a1.472 1.472 0 0 0 2.082-.274L16.37 2.663a1.457 1.457 0 0 0-.314-2.037z" />
   </svg>`
   }
+  updateDatabase();
 }
 
 var obj = {
@@ -280,4 +258,52 @@ function updateDatabase() {
 
 document.getElementById('street-address').onfocus = function () {
   document.getElementById('street-address').removeAttribute('readonly');
+}
+
+
+
+/// all the map functionality
+function setAutoComplete() {
+  var map, marker;
+      map = new google.maps.Map(document.getElementById('map'), {
+          center: {
+              lat: 39.783809,
+              lng: -102.057222
+          },
+          zoom: 3,
+          mapTypeId: "satellite"
+      });
+
+      marker = new google.maps.Marker({
+          position: {
+              lat: 39.783809,
+              lng: -102.057222
+          },
+          draggable: true,
+          animation: google.maps.Animation.BOUNCE,
+          map: map,
+          title: 'ADDRESS'
+      });
+
+      var input = document.getElementById('street-address');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.bindTo('bounds', map);
+      autocomplete.setFields(
+          ['address_components', 'geometry']);
+
+      google.maps.event.addListener(autocomplete, 'place_changed', function () {
+          place = autocomplete.getPlace();
+          document.getElementById('hide-map').classList.remove('hide');
+          if (place.geometry.viewport) {
+              map.fitBounds(place.geometry.viewport);
+              map.setZoom(20);
+          } else {
+              map.setCenter(place.geometry.location);
+              map.setZoom(20);
+          }
+          buildObj('coordinates',place.geometry.viewport);
+
+          marker.setPosition(place.geometry.location);
+          marker.setVisible(true);
+      });
 }
