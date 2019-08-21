@@ -97,7 +97,8 @@
                     <h2>What type of home do you have?</h2>
                     <h4>Select One</h4>
                     <div class="container home-options-all">
-                        <div onclick="checkHouseTypeBox(this, false)" class="container home-option row">
+                        <div onclick="checkHouseTypeBox(this, false, 'condo/apartment')"
+                            class="container home-option row">
                             <div class="container col home-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -121,7 +122,8 @@
                             </div>
                             <span>Condo / Apartment</span>
                         </div>
-                        <div onclick="checkHouseTypeBox(this, true)" class="container home-option row">
+                        <div onclick="checkHouseTypeBox(this, true, 'single family home')"
+                            class="container home-option row">
                             <div class="container col home-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="30" viewBox="0 0 36 30">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -140,7 +142,7 @@
                             </div>
                             <span>Single Family Home</span>
                         </div>
-                        <div onclick="checkHouseTypeBox(this, false)" class="container home-option row">
+                        <div onclick="checkHouseTypeBox(this, false, 'mobile home')" class="container home-option row">
                             <div class="container col home-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="32" viewBox="0 0 36 32">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -161,7 +163,8 @@
                             </div>
                             <span>Mobile Home</span>
                         </div>
-                        <div onclick="checkHouseTypeBox(this, true)" class="container home-option row">
+                        <div onclick="checkHouseTypeBox(this, true, 'commercial home')"
+                            class="container home-option row">
                             <div class="container col home-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -176,7 +179,7 @@
                             </div>
                             <span>Commercial</span>
                         </div>
-                        <div onclick="checkHouseTypeBox(this, false)" class="container home-option row">
+                        <div onclick="checkHouseTypeBox(this, false, 'none')" class="container home-option row">
                             <div class="container col home-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
                                     <path fill="#D3D8DC" fill-rule="nonzero"
@@ -195,7 +198,7 @@
                     <h2>How much was your last electric bill?</h2>
                     <h4>Select One</h4>
                     <div class="container home-options-all">
-                        <div onclick="checkElectricBill(this, true)" class="container home-option row">
+                        <div onclick="checkElectricBill(this, true, '0-74')" class="container home-option row">
                             <div class="container col home-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="21" viewBox="0 0 34 21">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -210,7 +213,7 @@
                             </div>
                             <span>$0 - $74</span>
                         </div>
-                        <div onclick="checkElectricBill(this, true)" class="container home-option row">
+                        <div onclick="checkElectricBill(this, true, '75-149')" class="container home-option row">
                             <div class="container col home-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -234,7 +237,7 @@
                             <span>$75 - $149</span>
                         </div>
 
-                        <div onclick="checkElectricBill(this, true)" class="container home-option row">
+                        <div onclick="checkElectricBill(this, true, '150-299')" class="container home-option row">
                             <div class="container col home-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="34" viewBox="0 0 24 34">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -252,7 +255,7 @@
                             </div>
                             <span>$150 - $299</span>
                         </div>
-                        <div onclick="checkElectricBill(this, true)" class="container home-option row">
+                        <div onclick="checkElectricBill(this, true,'300+')" class="container home-option row">
                             <div class="container col home-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="30" viewBox="0 0 38 30">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -281,7 +284,7 @@
                 <section class="container col single-step">
                     <h2>Do you have taxable income?</h2>
                     <div class="container center taxable-income-options-all">
-                        <div onclick="checkTaxableIncome(this, true)" class="container tax-option row">
+                        <div onclick="checkTaxableIncome(this, true, true)" class="container tax-option row">
                             <div class="container col taxable-income-circle smaller-bullet">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20">
                                     <path fill="#D3D8DC" fill-rule="nonzero"
@@ -290,7 +293,7 @@
                             </div>
                             <span>Yes</span>
                         </div>
-                        <div onclick="checkTaxableIncome(this, true)" class="container tax-option row">
+                        <div onclick="checkTaxableIncome(this, true, false)" class="container tax-option row">
                             <div class="container col taxable-income-circle smaller-bullet">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
                                     <path fill="#D3D8DC" fill-rule="nonzero"
@@ -309,31 +312,31 @@
                     <h2>What is your estimated credit score</h2>
                     <h4>Select One</h4>
                     <div class="container credit-options-all">
-                        <div onclick="checkCreditScore(this, true)" class="container tax-option row">
+                        <div onclick="checkCreditScore(this, true, '720+')" class="container tax-option row">
                             <div id="tax-circle-6" class="container col tax-type-circle active">
 
                             </div>
                             <span>720 and above</span>
                         </div>
-                        <div onclick="checkCreditScore(this, true)" class="container tax-option row">
+                        <div onclick="checkCreditScore(this, true, '660-719')" class="container tax-option row">
                             <div id="tax-circle-5" class="container col tax-type-circle ">
 
                             </div>
                             <span>660 - 719</span>
                         </div>
-                        <div onclick="checkCreditScore(this, true)" class="container tax-option row">
+                        <div onclick="checkCreditScore(this, true, '620-659')" class="container tax-option row">
                             <div id="tax-circle-4" class="container col tax-type-circle ">
 
                             </div>
                             <span>620 - 659</span>
                         </div>
-                        <div onclick="checkCreditScore(this, false)" class="container tax-option row">
+                        <div onclick="checkCreditScore(this, false, '580-619')" class="container tax-option row">
                             <div id="tax-circle-3" class="container col tax-type-circle ">
 
                             </div>
                             <span>580 - 619</span>
                         </div>
-                        <div onclick="checkCreditScore(this, false)" class="container tax-option row">
+                        <div onclick="checkCreditScore(this, false,'579-')" class="container tax-option row">
                             <div id="tax-circle-2" class="container col tax-type-circle ">
 
                             </div>
@@ -354,7 +357,8 @@
                 <section class="container col single-step">
                     <h2>What is your current employment status?</h2>
                     <div class="container employment-options-all">
-                        <div onclick="checkEmploymentStatus(this, true)" class="container employment-option row">
+                        <div onclick="checkEmploymentStatus(this, true, 'employed')"
+                            class="container employment-option row">
                             <div class="container col employment-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -368,7 +372,8 @@
                             </div>
                             <span>Employed</span>
                         </div>
-                        <div onclick="checkEmploymentStatus(this, true)" class="container employment-option row">
+                        <div onclick="checkEmploymentStatus(this, true, 'not employed')"
+                            class="container employment-option row">
                             <div class="container col employment-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -409,7 +414,8 @@
                             </div>
                             <span>Not Employed</span>
                         </div>
-                        <div onclick="checkEmploymentStatus(this, true)" class="container employment-option row">
+                        <div onclick="checkEmploymentStatus(this, true, 'self-employed')"
+                            class="container employment-option row">
                             <div class="container col employment-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -423,7 +429,8 @@
                             </div>
                             <span>Self Employed</span>
                         </div>
-                        <div onclick="checkEmploymentStatus(this, true)" class="container employment-option row">
+                        <div onclick="checkEmploymentStatus(this, true, 'retired')"
+                            class="container employment-option row">
                             <div class="container col employment-type-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="35" viewBox="0 0 34 35">
                                     <g fill="#B1BBC2" fill-rule="nonzero">
@@ -478,16 +485,20 @@
                     <h2>Almost there!</h2>
                     <h4>This is the last step to see if you qualify for solar.</h4>
                     <div class="container address-box col">
-                        <span class="span-responsive">First & Last Name</span>
-                        <input id="name" type="text">
+                        <span class="span-responsive">First Name</span>
+                        <input id="first-name" type="text">
                         <span class="hide" style="color: #ff6900; margin-top: -5px; margin-left: 15px;"
-                            id="error-name">Please, enter your name</span>
+                            id="error-first-name">Please, enter your first name</span>
+                            <span class="span-responsive">Last Name</span>
+                        <input id="last-name" type="text">
+                        <span class="hide" style="color: #ff6900; margin-top: -5px; margin-left: 15px;"
+                            id="error-last-name">Please, enter your last name</span>
                         <span class="span-responsive">Email</span>
-                        <input id="email" type="text">
+                        <input id="email" type="email">
                         <span class="hide" style="color: #ff6900; margin-top: -5px; margin-left: 15px;"
                             id="error-email">Please, enter a valid email</span>
                         <span class="span-responsive">Phone Number</span>
-                        <input id="phone" type="text">
+                        <input id="phone" type="tel">
                         <span class="hide" style="color: #ff6900; margin-top: -5px; margin-left: 15px;"
                             id="error-phone">Please, enter a valid phone number</span>
                         <div onclick="validateUserProfile()" style="margin-bottom: 20px !important;"
@@ -505,14 +516,15 @@
                     <div class="container col message-end">
                         <h4>YOU QUALIFY FOR SOLAR!</h4>
                         <div class="container center video-iframe">
-                            <iframe src="https://player.vimeo.com/video/341475870?autoplay=1" 
-                                frameborder="0"></iframe>
+                            <iframe src="https://player.vimeo.com/video/341475870?autoplay=1" frameborder="0"></iframe>
                         </div>
                         <span class="top-finish">
                             Schedule an appointment to review your free SOLAR SAVINGS REPORT
                         </span>
-                        <div class="container self-schedule">
-                            <div style="width: 100%;" id="SOIDIV_EnergyEvaluation" data-so-page="EnergyEvaluation" data-height="550" data-style="border: 0px solid #d8d8d8; width: 100%;" data-psz="10"></div>
+                        <div id="self-schedule" class="hide container self-schedule">
+                            <div style="width: 100%;" id="SOIDIV_EnergyEvaluation" data-so-page="EnergyEvaluation"
+                                data-height="550" data-style="border: 0px solid #d8d8d8; width: 100%;" data-psz="10">
+                            </div>
                             <script type="text/javascript" src="https://cdn.oncehub.com/mergedjs/so.js"></script>
                         </div>
                     </div>

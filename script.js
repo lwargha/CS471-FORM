@@ -45,6 +45,7 @@ function checkForStepCompletion(el, stepNumber, allowed) {
 }
 
 function checkTheBox(el, hasOwnHouse) {
+  buildObj("hasOwnHouse", hasOwnHouse);
   var temp = document.getElementsByClassName('active-box');
   if (temp[0]) {
     temp[0].classList.remove('active-box');
@@ -68,7 +69,7 @@ function updateUiBaseOnStep(stepNumber) {
   if (stepNumber === 9) {
     document.getElementById('steps').classList.add('hide');
 
-  } else { 
+  } else {
     document.getElementById('steps').classList.remove('hide');
   }
   document.getElementsByClassName('active')[0].classList.remove('active');
@@ -84,7 +85,8 @@ function updateUiBaseOnStep(stepNumber) {
   document.getElementById(`step-${stepNumber}`).setAttribute('onclick', `checkForStepCompletion(this, ${stepNumber}, true)`);
 }
 
-function checkHouseTypeBox(el, isAllowed) {
+function checkHouseTypeBox(el, isAllowed, homeType) {
+  buildObj('homeType', homeType);
   if (document.getElementsByClassName('active-house-type')[0]) {
     document.getElementsByClassName('active-house-type')[0].classList.remove('active-house-type');
   }
@@ -98,7 +100,8 @@ function checkHouseTypeBox(el, isAllowed) {
   }
 }
 
-function checkElectricBill(el, isEnough) {
+function checkElectricBill(el, isEnough, amount) {
+  buildObj('electricBill', amount);
   if (document.getElementsByClassName('active-house-type')[1]) {
     document.getElementsByClassName('active-house-type')[1].classList.remove('active-house-type');
   }
@@ -110,7 +113,8 @@ function checkElectricBill(el, isEnough) {
   }
 }
 
-function checkTaxableIncome(el, isAllowed) {
+function checkTaxableIncome(el, isAllowed, hasTaxableIncome) {
+  buildObj('hasTaxableIncome', hasTaxableIncome);
 
   if (document.getElementsByClassName('active-taxable-income')[0]) {
     document.getElementsByClassName('active-taxable-income')[0].classList.remove('active-taxable-income');
@@ -123,7 +127,8 @@ function checkTaxableIncome(el, isAllowed) {
   }
 }
 
-function checkCreditScore(el, hasEnoughCredit) {
+function checkCreditScore(el, hasEnoughCredit, amount) {
+  buildObj('estimatedCreditScore', amount)
   if (document.getElementsByClassName('active-tax-type')[0]) {
     document.getElementsByClassName('active-tax-type')[0].classList.remove('active-house-type');
   }
@@ -139,7 +144,8 @@ function checkCreditScore(el, hasEnoughCredit) {
 
 }
 
-function checkEmploymentStatus(el, isEligible) {
+function checkEmploymentStatus(el, isEligible, employmentStatus) {
+  buildObj('employmentStatus', employmentStatus);
   if (document.getElementsByClassName('active-employment-type')[0]) {
     document.getElementsByClassName('active-employment-type')[0].classList.remove('active-employment-type');
   }
@@ -155,32 +161,41 @@ function checkEmploymentStatus(el, isEligible) {
 
 function validateAddress() {
   var street = document.getElementById('street-address').value;
+  buildObj('address', street);
   if (street === '' || street === undefined) {
     if (street === '' || street === undefined) {
       document.getElementById('error-address').classList.remove('hide');
       document.getElementById('street-address').classList.add('shakeError');
       setTimeout(() => {
         document.getElementById('street-address').classList.remove('shakeError');
-      }, 300); } 
-    } else {
-      window.location = `#slider-8`;
-      updateUiBaseOnStep(8);
-      document.getElementById('error-address').classList.add('hide');
+      }, 300);
     }
+  } else {
+    window.location = `#slider-8`;
+    updateUiBaseOnStep(8);
+    document.getElementById('error-address').classList.add('hide');
+  }
 }
 
 function validateUserProfile() {
   var validated = false;
-  var name = document.getElementById('name').value;
+  var firstName = document.getElementById('first-name').value;
+  var lastName = document.getElementById('last-name').value;
   var phone = document.getElementById('phone').value;
   var email = document.getElementById('email').value;
 
-  if (name === '' || name === undefined || phone === '' || phone === undefined || email === '' || email === undefined) {
-    if (name === '' || name === undefined) {
-      document.getElementById('error-name').classList.remove('hide');
-      document.getElementById('name').classList.add('shakeError');
+  if (firstName === '' || firstName === undefined || lastName === '' || lastName === undefined || phone === '' || phone === undefined || email === '' || email === undefined) {
+    if (firstName === '' || firstName === undefined) {
+      document.getElementById('error-first-name').classList.remove('hide');
+      document.getElementById('first-name').classList.add('shakeError');
       setTimeout(() => {
-        document.getElementById('name').classList.remove('shakeError');
+        document.getElementById('first-name').classList.remove('shakeError');
+      }, 300);
+    } else if (lastName === '' || lastName === undefined) {
+      document.getElementById('error-last-name').classList.remove('hide');
+      document.getElementById('last-name').classList.add('shakeError');
+      setTimeout(() => {
+        document.getElementById('last-name').classList.remove('shakeError');
       }, 300);
     } else if (email === '' || email === undefined) {
       document.getElementById('error-email').classList.remove('hide');
@@ -197,7 +212,7 @@ function validateUserProfile() {
     }
   } else {
 
-    if (!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       document.getElementById('error-email').classList.remove('hide');
       document.getElementById('email').classList.add('shakeError');
       setTimeout(() => {
@@ -222,9 +237,11 @@ function validateUserProfile() {
     }
   }
   if (validated) {
+    buildObj('personalInfo', {'firstName': firstName, 'lastName' : lastName, 'email' : email, 'phone' : phone})
     window.location = `#slider-9`;
     document.getElementById('steps').classList.add('hide');
     document.getElementsByClassName('active')[0].classList.remove('active');
+    document.getElementById('self-schedule').classList.remove('hide');
     document.getElementById(`step-8`).innerHTML = `<svg style="margin-top: 6px;" xmlns="http://www.w3.org/2000/svg" width="17" height="14" viewBox="0 0 17 14">
     <path fill="#FFF" fill-rule="nonzero"
         d="M16.056.626a1.455 1.455 0 0 0-2.035.309l-6.903 9.369-4.39-3.512A1.458 1.458 0 0 0 .907 9.067l5.573 4.459a1.472 1.472 0 0 0 2.082-.274L16.37 2.663a1.457 1.457 0 0 0-.314-2.037z" />
@@ -233,38 +250,34 @@ function validateUserProfile() {
 }
 
 var obj = {
-  ownHome: false,
-  homeType: "condo",
-  electricBill: 0,
-  hasTaxableIncome: false,
-  estimatedCreditScore: "720",
-  employmentStatus: "employed",
-  address: {
-    street: "398 Pioneer rd #1111",
-    zip: "83440"
-  },
+  hasOwnHouse: undefined,
+  homeType: undefined,
+  electricBill: undefined,
+  hasTaxableIncome: undefined,
+  estimatedCreditScore: undefined,
+  employmentStatus: undefined,
+  address: undefined,
   personalInfo: {
-    name: "Lucas Wargha",
-    email: "l@gmail.com",
-    phone: "000-000-0000"
+    firstName: undefined,
+    lastName: undefined,
+    email: undefined,
+    phone: undefined
   }
 }
 
 function buildObj(prop, value) {
-  console.log(obj);
   obj[prop] = value;
-  console.log(obj);
 }
 
 function updateDatabase() {
   var server = new XMLHttpRequest();
   server.open('POST', 'https://hooks.zapier.com/hooks/catch/1681335/obltmf3/');
   server.onload = function () {
-    console.log("success");
+    console.log(this.responseText)
   };
-  server.send({"Name": "Lucas"});
+  server.send(JSON.stringify(obj));
 }
 
-document.getElementById('street-address').onfocus = function () { 
+document.getElementById('street-address').onfocus = function () {
   document.getElementById('street-address').removeAttribute('readonly');
 }
