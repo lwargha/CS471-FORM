@@ -1,7 +1,6 @@
-// Initialize Firebase
 window.onbeforeunload = function (e) {
 
-  this.console.log('User just tried closing window. Let us give him/her this confirmation message and send some data to the database');
+  // this.console.log('User just tried closing window. Let us give him/her this confirmation message and send some data to the database');
 
   var confirmationMessage = "Exiting! :) ";
   (e || window.event).returnValue = confirmationMessage;
@@ -114,7 +113,6 @@ function checkCreditScore(el, hasEnoughCredit, amount) {
     document.getElementById('error-credit-score').classList.add('hide');
   } else {
     document.getElementById('error-credit-score').classList.remove('hide');
-    // window.location = `#error-credit-score`;
   }
 
 }
@@ -259,8 +257,6 @@ function updateDatabase() {
 document.getElementById('street-address').onfocus = function () {
   document.getElementById('street-address').removeAttribute('readonly');
 }
-
-
 
 /// all the map functionality
 function setAutoComplete() {
