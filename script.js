@@ -185,7 +185,7 @@ function validateUserProfile() {
     }
   } else {
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!document.getElementById('email').checkValidity()) {
       document.getElementById('error-email').classList.remove('hide');
       document.getElementById('email').classList.add('shakeError');
       setTimeout(() => {
@@ -248,9 +248,6 @@ function buildObj(prop, value) {
 function updateDatabase() {
   var server = new XMLHttpRequest();
   server.open('POST', 'https://hooks.zapier.com/hooks/catch/1681335/obltmf3/');
-  server.onload = function () {
-    console.log(this.responseText)
-  };
   server.send(JSON.stringify(obj));
 }
 
