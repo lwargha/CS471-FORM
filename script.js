@@ -152,6 +152,7 @@ function validateAddress() {
 
 function validateUserProfile() {
   var validated = false;
+  var validatedEmail = false;
   var firstName = document.getElementById('first-name').value;
   var lastName = document.getElementById('last-name').value;
   var phone = document.getElementById('phone').value;
@@ -186,14 +187,15 @@ function validateUserProfile() {
   } else {
 
     if (!document.getElementById('email').checkValidity()) {
+      console.log('called');
       document.getElementById('error-email').classList.remove('hide');
       document.getElementById('email').classList.add('shakeError');
       setTimeout(() => {
         document.getElementById('email').classList.remove('shakeError');
       }, 300);
-      validated = false;
+      validatedEmail = false;
     } else {
-      validated = true;
+      validatedEmail = true;
       document.getElementById('error-email').classList.add('hide');
     }
 
@@ -209,7 +211,7 @@ function validateUserProfile() {
       document.getElementById('error-phone').classList.add('hide');
     }
   }
-  if (validated) {
+  if (validated && validatedEmail) {
     buildObj('personalInfo', {'firstName': firstName, 'lastName' : lastName, 'email' : email, 'phone' : phone})
     
     window.location = `#slider-9`;
