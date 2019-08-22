@@ -139,7 +139,7 @@ function validateAddress() {
     if (street === '' || street === undefined) {
       document.getElementById('error-address').classList.remove('hide');
       document.getElementById('street-address').classList.add('shakeError');
-      setTimeout(() => {
+      setTimeout(function() {
         document.getElementById('street-address').classList.remove('shakeError');
       }, 300);
     }
@@ -161,25 +161,25 @@ function validateUserProfile() {
     if (firstName === '' || firstName === undefined) {
       document.getElementById('error-first-name').classList.remove('hide');
       document.getElementById('first-name').classList.add('shakeError');
-      setTimeout(() => {
+      setTimeout(function() {
         document.getElementById('first-name').classList.remove('shakeError');
       }, 300);
     } else if (lastName === '' || lastName === undefined) {
       document.getElementById('error-last-name').classList.remove('hide');
       document.getElementById('last-name').classList.add('shakeError');
-      setTimeout(() => {
+      setTimeout(function() {
         document.getElementById('last-name').classList.remove('shakeError');
       }, 300);
     } else if (email === '' || email === undefined) {
       document.getElementById('error-email').classList.remove('hide');
       document.getElementById('email').classList.add('shakeError');
-      setTimeout(() => {
+      setTimeout(function() {
         document.getElementById('email').classList.remove('shakeError');
       }, 300);
     } else if (phone === '' || phone === undefined) {
       document.getElementById('error-phone').classList.remove('hide');
       document.getElementById('phone').classList.add('shakeError');
-      setTimeout(() => {
+      setTimeout(function() {
         document.getElementById('phone').classList.remove('shakeError');
       }, 300);
     }
@@ -188,7 +188,7 @@ function validateUserProfile() {
     if (!document.getElementById('email').checkValidity()) {
       document.getElementById('error-email').classList.remove('hide');
       document.getElementById('email').classList.add('shakeError');
-      setTimeout(() => {
+      setTimeout(function() {
         document.getElementById('email').classList.remove('shakeError');
       }, 300);
       validated = false;
@@ -200,7 +200,7 @@ function validateUserProfile() {
     if (!phone.match(/^([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})$/)) {
       document.getElementById('error-phone').classList.remove('hide');
       document.getElementById('phone').classList.add('shakeError');
-      setTimeout(() => {
+      setTimeout(function() {
         document.getElementById('phone').classList.remove('shakeError');
       }, 300);
       validated = false;
