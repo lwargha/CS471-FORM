@@ -7,6 +7,10 @@ window.onbeforeunload = function (e) {
   return confirmationMessage;
 };
 
+window.onload = function() {
+  location.hash = "#slider-1";
+}
+
 function checkForStepCompletion(el, stepNumber, allowed) {
   //some business logic to check inputs here, then set allowed to true
   if (allowed) {
@@ -39,7 +43,9 @@ function checkTheBox(el, hasOwnHouse) {
 
 function updateUiBaseOnStep(stepNumber) {
   if (stepNumber === 9) {
+    console.log('hello');
     document.getElementById('steps').classList.add('hide');
+    console.log(document.getElementById("videoContainer"));
 
   } else {
     document.getElementById('steps').classList.remove('hide');
@@ -214,6 +220,7 @@ function validateUserProfile() {
   if (validated && validatedEmail) {
     buildObj('personalInfo', {'firstName': firstName, 'lastName' : lastName, 'email' : email, 'phone' : phone})
     
+    document.getElementById("videoContainer").innerHTML = '<iframe allow="autoplay" src="https://player.vimeo.com/video/341475870?autoplay=1" frameborder="0"></iframe>';
     window.location = `#slider-9`;
     document.getElementById('steps').classList.add('hide');
     document.getElementsByClassName('active')[0].classList.remove('active');
