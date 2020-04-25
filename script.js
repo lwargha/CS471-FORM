@@ -31,7 +31,7 @@ function checkTheBox(el, hasOwnHouse) {
   if (hasOwnHouse) {
     document.getElementById('house-img').classList.remove('hide');
     document.getElementById('error-home').classList.add('hide');
-    updateUiBaseOnStep(2);
+    updateUiBaseOnStep(2, "Own your home?");
     window.location = `#slider-2`;
   } else {
     document.getElementById('house-img').classList.add('hide');
@@ -41,9 +41,14 @@ function checkTheBox(el, hasOwnHouse) {
   }
 }
 
-function updateUiBaseOnStep(stepNumber) {
+function updateUiBaseOnStep(stepNumber, stepLabel = "") {
+
+  // @ts-ignore
+  gtag("event", "question_" + (stepNumber - 1), {
+    "event_label": stepLabel
+  });
+
   if (stepNumber === 9) {
-    console.log('hello');
     document.getElementById('steps').classList.add('hide');
     console.log(document.getElementById("videoContainer"));
 
@@ -70,7 +75,7 @@ function checkHouseTypeBox(el, isAllowed, homeType) {
   }
   el.classList.add('active-house-type');
   if (isAllowed) {
-    updateUiBaseOnStep(3);
+    updateUiBaseOnStep(3, "What type of home?");
     window.location = `#slider-3`;
     document.getElementById('error-home-type').classList.add('hide');
   } else {
@@ -88,7 +93,7 @@ function checkElectricBill(el, isEnough, amount) {
   if (isEnough) {
     el.classList.add('active-house-type');
     window.location = `#slider-4`;
-    updateUiBaseOnStep(4);
+    updateUiBaseOnStep(4, "How much was your last electric bill");
   }
 }
 
@@ -102,7 +107,7 @@ function checkTaxableIncome(el, isAllowed, hasTaxableIncome) {
   if (isAllowed) {
     el.classList.add('active-taxable-income');
     window.location = `#slider-5`;
-    updateUiBaseOnStep(5);
+    updateUiBaseOnStep(5, "Do you have taxable income?");
   }
 }
 
@@ -115,7 +120,7 @@ function checkCreditScore(el, hasEnoughCredit, amount) {
   if (hasEnoughCredit) {
     el.classList.add('active-tax-type');
     window.location = `#slider-6`;
-    updateUiBaseOnStep(6);
+    updateUiBaseOnStep(6, "Estimated Credit Score?");
     document.getElementById('error-credit-score').classList.add('hide');
   } else {
     document.getElementById('error-credit-score').classList.remove('hide');
@@ -132,7 +137,7 @@ function checkEmploymentStatus(el, isEligible, employmentStatus) {
   if (isEligible) {
     el.classList.add('active-employment-type');
     window.location = `#slider-7`;
-    updateUiBaseOnStep(7);
+    updateUiBaseOnStep(7, "Current Employment Status");
   } else {
 
   }
@@ -151,7 +156,7 @@ function validateAddress() {
     }
   } else {
     window.location = `#slider-8`;
-    updateUiBaseOnStep(8);
+    updateUiBaseOnStep(8, "What is your address");
     document.getElementById('error-address').classList.add('hide');
   }
 }
@@ -193,7 +198,6 @@ function validateUserProfile() {
   } else {
 
     if (!document.getElementById('email').checkValidity()) {
-      console.log('called');
       document.getElementById('error-email').classList.remove('hide');
       document.getElementById('email').classList.add('shakeError');
       setTimeout(function() {
@@ -218,6 +222,9 @@ function validateUserProfile() {
     }
   }
   if (validated && validatedEmail) {
+    gtag("event", "question_8", {
+      "event_label": "Personal Info"
+    });
     buildObj('personalInfo', {'firstName': firstName, 'lastName' : lastName, 'email' : email, 'phone' : phone})
     
     document.getElementById("videoContainer").innerHTML = '<iframe allow="autoplay" src="https://player.vimeo.com/video/341475870?autoplay=1" frameborder="0"></iframe>';
@@ -255,6 +262,7 @@ function buildObj(prop, value) {
 }
 
 function updateDatabase() {
+  gtag("event", "converted");
   var server = new XMLHttpRequest();
   server.open('POST', 'https://hooks.zapier.com/hooks/catch/1681335/obltmf3/');
   server.send(JSON.stringify(obj));
