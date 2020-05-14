@@ -8,6 +8,7 @@ window.onbeforeunload = function (e) {
 };
 
 window.onload = function() {
+  fbq('track', 'InitiateCheckout');
   location.hash = "#slider-1";
 }
 
@@ -265,6 +266,7 @@ function buildObj(prop, value) {
 }
 
 function updateDatabase() {
+  fbq('track', 'Lead');
   gtag("event", "converted");
   var server = new XMLHttpRequest();
   server.open('POST', 'https://hooks.zapier.com/hooks/catch/1681335/orq93em/silent/');
