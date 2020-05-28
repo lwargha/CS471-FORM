@@ -271,6 +271,12 @@ function updateDatabase() {
   var server = new XMLHttpRequest();
   server.open('POST', 'https://hooks.zapier.com/hooks/catch/1681335/orq93em/silent/');
   server.send(JSON.stringify(obj));
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://hooks.zapier.com/hooks/catch/1681335/oin1b7a/");
+  xhr.send(JSON.stringify({
+    "survey_id": "2",
+    "data": obj
+  }));
 }
 
 document.getElementById('street-address').onfocus = function () {
