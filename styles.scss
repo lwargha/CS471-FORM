@@ -2,945 +2,1031 @@
 
 *::after,
 *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 @-ms-viewport {
-    width: device-width;
+  width: device-width;
 }
 
 html,
 body {
-    width: 100%
+  width: 100%;
 }
 
 body {
-    font-family: 'Fjalla One', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f5f6f7;
-
+  font-family: "Fjalla One", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f6f7;
 }
 
 :root {
-    --bg-dark: #1c2730;
-    --dark-texter: #303d46;
+  --bg-dark: #1c2730;
+  --dark-texter: #303d46;
 }
 
 .dark-text {
-    color: var(--dark-texter);
+  color: var(--dark-texter);
 }
 
 .container {
-    display: flex;
+  display: flex;
 }
 
 .row {
-    flex-flow: row;
+  flex-flow: row;
 }
 
 .col {
-    flex-flow: column;
+  flex-flow: column;
 }
 
 .center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .hide {
-    transition: all .4s;
-    display: none;
+  transition: all 0.4s;
+  display: none;
 }
 
 section {
-    overflow-y: auto !important;
+  overflow-y: auto !important;
 }
 
 .smaller-bullet {
-    height: 40px !important;
-    width: 40px !important;
+  height: 40px !important;
+  width: 40px !important;
 }
 
-.fix-h2 {}
+.fix-h2 {
+}
 
 .container-all {
-
-
-    header {
-        position: fixed;
-        top: 0;
-        margin-right: auto;
-        margin-left: auto;
-        width: 100vw;
-        height: 70px;
-        background: white;
-        z-index: 3;
-
-        img {
-            width: 260px;
-            height: auto;
-        }
-    }
-
-    .steps {
-        background-color: #ff6900;
-        height: 70px;
-        position: fixed;
-        top: 70px;
-        left: 0px;
-        width: 100%;
-        z-index: 3;
-
-        .page-bullets {
-            margin: auto 0;
-            height: 40%;
-            width: 100%;
-
-            .bullet-line-container {
-                width: 40%;
-                justify-content: space-evenly;
-
-                .single-bullet,
-                .single-line {
-                    margin: auto 0;
-                }
-
-                .single-bullet {
-                    background-color: #ff6900;
-                    color: white;
-                    border-radius: 50%;
-                    border: none;
-                    display: block;
-                    text-align: center;
-                    min-width: 30px;
-                    height: 30px;
-                    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-                    border: solid 2px #ffffff;
-
-                    span {
-                        // height: 100%;
-                        width: 100%;
-                        position: relative;
-                        top: 5px;
-                    }
-                }
-
-                .active {
-                    background-color: white;
-                    color: #ff6900;
-                }
-
-                .single-bullet:hover {
-                    cursor: pointer;
-                }
-
-                .single-line {
-                    background: rgba(255, 255, 255, 0.25);
-                    width: 100%;
-                    height: 2px;
-                    min-width: 25px;
-                    margin-bottom: 12px;
-                }
-
-                .single-bullet:first-of-type {
-                    margin-left: 70px;
-                }
-
-                .single-bullet:last-of-type {
-                    margin-right: 70px;
-                }
-            }
-        }
-    }
-
-    .slider-container {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        overflow-x: hidden;
-        text-align: center;
-
-        .wrap-steps {
-            width: 900%;
-            overflow: hidden;
-            position: relative;
-            margin-top: 140px;
-            transition: left .4s;
-
-            .after-address {
-                width: 166px;
-                height: 49px;
-                border-radius: 6px;
-                background-color: #3dca59;
-                color: white !important;
-                margin-top: 20px;
-                align-self: center;
-
-                span {
-                    text-align: center;
-                    margin-top: auto !important;
-                    margin-bottom: auto !important;
-                    font-size: 22px;
-                    color: white !important;
-                }
-
-                .arrow {
-                    margin-left: 25px;
-                    font-size: 40px;
-                }
-            }
-
-            .after-address:hover {
-                cursor: pointer;
-                opacity: 0.7;
-                transition: all .4s;
-            }
-
-            .single-step {
-                min-width: 100vw;
-                width: 100vw;
-                float: left;
-                overflow: auto;
-                scroll-behavior: smooth;
-
-                #error-home-type {
-                    margin-bottom: 40px;
-                    background: white;
-                    width: 820px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    height: 170px;
-                    justify-content: center;
-
-                    h2,
-                    h4 {
-                        margin: 0 30px;
-                        color: #ff6900
-                    }
-
-                    h4 {
-                        margin-top: 20px;
-                    }
-
-                    a {
-                        text-decoration: underline;
-                        color: inherit;
-                    }
-                }
-
-                .roof-top {
-                    width: 498px;
-                    height: 31px;
-                    font-size: 25px;
-                    font-weight: normal;
-                    color: #425563;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-
-                #error-home {
-                    margin-top: 70px;
-                    background: white;
-                    width: 820px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    height: 170px;
-                    justify-content: center;
-                    margin-bottom: 40px;
-
-                    h2,
-                    h4 {
-                        margin-block-start: 0;
-                        margin: 0 30px;
-                        color: #ff6900
-                    }
-
-                    h4 {
-                        margin-top: 20px;
-                    }
-
-                    a {
-                        text-decoration: underline;
-                        color: inherit;
-                    }
-                }
-
-                h2 {
-                    margin-top: 30px;
-                    font-size: 35px;
-                    font-weight: normal;
-                    font-style: normal;
-                    font-stretch: normal;
-                    line-height: normal;
-                    letter-spacing: normal;
-                    text-align: center;
-                    color: #425563;
-                }
-
-                h4 {
-                    margin-top: 10px;
-                    font-size: 20px;
-                    color: #425563;
-                    font-weight: normal;
-                }
-
-                #error-credit-score {
-                    background: white;
-                    width: 820px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    height: 170px;
-                    justify-content: center;
-                    margin-bottom: 40px;
-
-                    h2,
-                    h4 {
-                        margin: 0 30px;
-                        color: #ff6900
-                    }
-
-                    h4 {
-                        margin-top: 20px;
-                    }
-
-                    a {
-                        text-decoration: underline;
-                        color: inherit;
-                    }
-                }
-
-                .check-own-house {
-                    margin-top: 45px;
-
-                    .check-whole-area:hover {
-                        cursor: pointer;
-                        transition: all .4s;
-
-                        .check {
-                            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                        }
-
-                        span {
-                            color: #425563;
-                        }
-
-                        path {
-                            fill: #FF6900;
-                        }
-                    }
-
-                    .check {
-                        background-color: #ffffff;
-                        border-radius: 50%;
-                        width: 40.7px;
-                        height: 40.7px;
-
-                        svg {
-                            margin: auto;
-                        }
-                    }
-
-                    .active-box {
-                        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-
-                        span {
-                            color: #425563;
-                        }
-
-                        path {
-                            fill: #FF6900;
-                        }
-                    }
-
-                    span {
-                        margin-top: 8px;
-                        margin-left: 18px;
-                        font-size: 25px;
-                        color: #7d8d9a;
-                    }
-                }
-
-                .active-taxable-income {
-
-                    cursor: pointer;
-                    transition: all .4s;
-
-
-                    .taxable-income-circle {
-                        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                    }
-
-
-                    span {
-                        color: #425563;
-                    }
-
-                    path {
-                        fill: #FF6900;
-                    }
-
-                }
-
-                .taxable-income-options-all {
-
-                    .tax-option:hover {
-                        cursor: pointer;
-                        transition: all .4s;
-
-
-                        .taxable-income-circle {
-                            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                        }
-
-
-                        span {
-                            color: #425563;
-                        }
-
-                        path {
-                            fill: #FF6900;
-                        }
-                    }
-
-                    .tax-option {
-                        margin-right: 40px;
-
-                        .taxable-income-circle {
-                            background: white;
-                            border-radius: 50%;
-                            width: 41px;
-                            height: 41px;
-
-                            svg {
-                                margin: auto;
-                            }
-                        }
-                    }
-
-                    span {
-                        margin-top: 8px;
-                        margin-left: 10px;
-                        font-size: 25px;
-                        color: #7d8d9a;
-                    }
-                }
-
-                .credit-options-all {
-                    position: relative;
-                    left: 30px;
-                    margin-top: 45px;
-                    flex-wrap: wrap;
-                    max-width: 550px;
-                    margin-left: auto;
-                    margin-right: auto;
-
-                    .tax-option:hover {
-                        cursor: pointer;
-
-                        span {
-                            color: #425563;
-                        }
-
-                        .tax-type-circle {
-                            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                        }
-
-                        #tax-circle-6 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/6.svg) no-repeat 5px 8px;
-                        }
-
-                        #tax-circle-5 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/5.svg) no-repeat 5px 8px;
-                        }
-
-                        #tax-circle-4 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/4.svg) no-repeat 5px 8px;
-                        }
-
-                        #tax-circle-3 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/3.svg) no-repeat 5px 8px;
-                        }
-
-                        #tax-circle-2 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/2.svg) no-repeat 5px 8px;
-                        }
-
-                        #tax-circle-1 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/1.svg) no-repeat center;
-                        }
-                    }
-
-                    .tax-option {
-                        margin-right: 65px;
-                        margin-bottom: 27px;
-                        width: 200px;
-                        margin-left: 10px;
-
-                        span {
-                            margin-top: 18px;
-                            margin-left: 10px;
-                            color: #7d8d9a;
-                        }
-
-                        .tax-type-circle {
-                            width: 50px;
-                            height: 50px;
-                            background: white;
-                            border-radius: 50%;
-                        }
-
-                        #tax-circle-6 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/6_plain.svg) no-repeat 5px 8px;
-                        }
-
-                        #tax-circle-5 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/5_plain.svg) no-repeat 5px 8px;
-                        }
-
-                        #tax-circle-4 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/4_plain.svg) no-repeat 5px 8px;
-                        }
-
-                        #tax-circle-3 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/3_plain.svg) no-repeat 5px 8px;
-                        }
-
-                        #tax-circle-2 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/2_plain.svg) no-repeat 5px 8px;
-                        }
-
-                        #tax-circle-1 {
-                            background: white url(https://shinesolar.github.io/Marketing-Funnel/img/1_plain.svg) no-repeat center;
-                        }
-                    }
-                }
-
-                .home-options-all {
-                    position: relative;
-                    left: 30px;
-                    margin-top: 45px;
-                    flex-wrap: wrap;
-                    max-width: 550px;
-                    margin-left: auto;
-                    margin-right: auto;
-
-                    h2,
-                    h4 {
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-
-                    .home-type-circle {
-                        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                    }
-
-                    h2,
-                    h4 {
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-
-                    .home-option:hover {
-                        cursor: pointer;
-                        transition: all .4s;
-
-                        span {
-                            color: #425563;
-                        }
-
-                        path {
-                            fill: #ff6900;
-                        }
-
-                        .home-type-circle {
-                            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                        }
-                    }
-
-                    .active-house-type {
-                        transition: all .4s;
-
-                        span {
-                            color: #425563;
-                        }
-
-                        path {
-                            fill: #ff6900;
-                        }
-
-                        .home-type-circle {
-                            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                        }
-                    }
-
-                    .home-option {
-                        margin-right: 65px;
-                        margin-bottom: 27px;
-                        width: 200px;
-                        margin-left: 10px;
-
-                        .home-type-circle {
-                            background: white;
-                            height: 60px;
-                            width: 60px;
-                            border-radius: 50%;
-
-                            svg {
-                                margin: auto;
-                            }
-                        }
-
-                        span {
-                            margin-top: 18px;
-                            margin-left: 10px;
-                            color: #7d8d9a;
-                        }
-                    }
-                }
-
-                .employment-options-all {
-                    position: relative;
-                    left: 30px;
-                    margin-top: 45px;
-                    flex-wrap: wrap;
-                    max-width: 550px;
-                    margin-left: auto;
-                    margin-right: auto;
-
-                    h2,
-                    h4 {
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-
-                    .employment-type-circle {
-                        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                    }
-
-
-                    h2,
-                    h4 {
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-
-                    .employment-option:hover {
-                        cursor: pointer;
-                        transition: all .4s;
-
-                        span {
-                            color: #425563;
-                        }
-
-                        path {
-                            fill: #ff6900;
-                        }
-
-                        .employment-type-circle {
-                            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                        }
-                    }
-
-                    .active-employment-type {
-                        transition: all .4s;
-
-                        span {
-                            color: #425563;
-                        }
-
-                        path {
-                            fill: #ff6900;
-                        }
-
-                        .employment-type-circle {
-                            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                        }
-                    }
-
-                    .employment-option {
-                        margin-right: 65px;
-                        margin-bottom: 27px;
-                        width: 200px;
-                        margin-left: 10px;
-
-                        .employment-type-circle {
-                            background: white;
-                            height: 60px;
-                            width: 60px;
-                            border-radius: 50%;
-
-                            svg {
-                                margin: auto;
-                            }
-                        }
-
-                        span {
-                            margin-top: 18px;
-                            margin-left: 10px;
-                            color: #7d8d9a;
-                        }
-                    }
-                }
-
-                .address-box {
-                    // margin-top: 25px;
-                    max-width: 750px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    text-align: left;
-
-                    span {
-                        margin-top: 20px;
-                        font-size: 16px;
-                        color: #7d8d9a;
-                        margin-bottom: 5px;
-                    }
-
-                    input {
-                        height: 50px;
-                        border: none;
-                        margin-bottom: 20px;
-                        font-size: 20px;
-                        color: #425563;
-                        text-indent: 15px;
-                        width: 500px;
-                    }
-                }
-            }
-
-            .message-end {
-                margin-top: 30px;
-                max-width: 100vw;
-                align-self: center;
-                text-align: center;
-                padding: 0 50px;
-
-                .self-schedule { 
-                    margin-right: auto;
-                    margin-left: auto;
-                    position: relative;
-                    // height:;
-                    width: 100%;
-                    padding-bottom: 56.25%;
-                }
-
-                .video-iframe {
-                    overflow: hidden;
-                    padding-bottom: 56.25%;
-                    position: relative;
-                    height: 0;
-                    min-width: 300px;
-                    max-width: 744px;
-
-                iframe {
-                    left: 0;
-                    top: 0;
-                    height: 100%;
-                    width: 100%;
-                    position: absolute;
-                }
-            }
-
-            h4 {
-                margin-top: -25px !important;
-                font-size: 45px;
-                color: #ff6900;
-                margin-left: 30px;
-                margin-right: 30px;
-            }
-
-            .top-finish {
-                max-width: 560px;
-                margin-top: 30px;
-                font-size: 24px;
-                color: #425563;
-            }
-
-            .bottom-finish {
-                margin-top: 10px;
-                color: #7d8d9a;
-                font-size: 24px;
-                margin-bottom: 42px;
-            }
-        }
-    }
-}
-}
-
-#slider-1:target~.wrap-steps {
+  header {
+    position: fixed;
     top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100vw;
+    height: 140px;
+    background: white;
+    z-index: 3;
+
+    img {
+      margin-top: 10px;
+      height: 120px;
+      width: auto;
+    }
+  }
+
+  .steps {
+    background-color: #ff6900;
+    height: 70px;
+    position: fixed;
+    top: 140px;
     left: 0px;
-}
+    width: 100%;
+    z-index: 3;
 
-#slider-2:target~.wrap-steps {
-    top: 0;
-    left: -100vw;
-}
+    .page-bullets {
+      margin: auto 0;
+      height: 40%;
+      width: 100%;
 
-#slider-3:target~.wrap-steps {
-    top: 0;
-    left: -200vw;
-}
+      .bullet-line-container {
+        width: 40%;
+        justify-content: space-evenly;
 
-#slider-4:target~.wrap-steps {
-    top: 0;
-    left: -300vw;
-}
+        .single-bullet,
+        .single-line {
+          margin: auto 0;
+        }
 
-#slider-5:target~.wrap-steps {
-    top: 0;
-    left: -400vw;
-}
+        .single-bullet {
+          background-color: #ff6900;
+          color: white;
+          border-radius: 50%;
+          border: none;
+          display: block;
+          text-align: center;
+          min-width: 30px;
+          height: 30px;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          border: solid 2px #ffffff;
 
-#slider-6:target~.wrap-steps {
-    top: 0;
-    left: -500vw;
-}
+          span {
+            // height: 100%;
+            width: 100%;
+            position: relative;
+            top: 5px;
+          }
+        }
 
-#slider-7:target~.wrap-steps {
-    top: 0;
-    left: -600vw;
-}
+        .active {
+          background-color: white;
+          color: #ff6900;
+        }
 
-#slider-8:target~.wrap-steps {
-    top: 0;
-    left: -700vw;
-}
+        .single-bullet:hover {
+          cursor: pointer;
+        }
 
-#slider-9:target~.wrap-steps {
-    top: 0;
-    left: -800vw;
-}
+        .single-line {
+          background: rgba(255, 255, 255, 0.25);
+          width: 100%;
+          height: 2px;
+          min-width: 25px;
+          margin-bottom: 12px;
+        }
 
+        .single-bullet:first-of-type {
+          margin-left: 70px;
+        }
 
-.shakeError {
-    -webkit-animation: shakeAnim 0.4s 1 linear;
-    -moz-animation: shakeAnim 0.4s 1 linear;
-    -o-animation: shakeAnim 0.4s 1 linear;
-}
-
-@-webkit-keyframes shakeAnim {
-    0% {
-        -webkit-transform: translate(30px);
+        .single-bullet:last-of-type {
+          margin-right: 70px;
+        }
+      }
     }
+  }
 
-    20% {
-        -webkit-transform: translate(-30px);
-    }
-
-    40% {
-        -webkit-transform: translate(15px);
-    }
-
-    60% {
-        -webkit-transform: translate(-15px);
-    }
-
-    80% {
-        -webkit-transform: translate(8px);
-    }
-
-    100% {
-        -webkit-transform: translate(0px);
-    }
-}
-
-@-moz-keyframes shakeAnim {
-    0% {
-        -moz-transform: translate(30px);
-    }
-
-    20% {
-        -moz-transform: translate(-30px);
-    }
-
-    40% {
-        -moz-transform: translate(15px);
-    }
-
-    60% {
-        -moz-transform: translate(-15px);
-    }
-
-    80% {
-        -moz-transform: translate(8px);
-    }
-
-    100% {
-        -moz-transform: translate(0px);
-    }
-}
-
-
-// styling the map 
-.pac-container,
-.pac-item {
-    font-size: 18px;
-}
-
-.pac-container {
-    z-index: 99999;
-}
-
-.pac-item-query {
-    font-size: 18px;
-}
-
-#map {
+  .slider-container {
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    height: 400px;
-    width: 600px;
-}
+    overflow-x: hidden;
+    text-align: center;
 
+    .wrap-steps {
+      width: 900%;
+      overflow: hidden;
+      position: relative;
+      margin-top: 215px;
+      transition: left 0.4s;
 
-.correct-roof {
-    width: 600px;
-    height: 100px;
-    margin: 15px auto;
-    border-radius: 20px;
-    color: white;
-
-    .maps-address {
-        background: #3dca59;
-        width: 130px;
-        margin-left: auto;
-        border-radius: 4px;
+      .after-address {
+        width: 166px;
+        height: 49px;
+        border-radius: 6px;
+        background-color: #3dca59;
+        color: white !important;
+        margin-top: 20px;
+        align-self: center;
 
         span {
-            text-align: center;
-            margin-top: auto !important;
-            margin-bottom: auto !important;
-            font-size: 22px;
+          text-align: center;
+          margin-top: auto !important;
+          margin-bottom: auto !important;
+          font-size: 22px;
+          color: white !important;
         }
 
         .arrow {
-            margin-left: 25px;
-            font-size: 40px;
+          margin-left: 25px;
+          font-size: 40px;
         }
+      }
+
+      .after-address:hover {
+        cursor: pointer;
+        opacity: 0.7;
+        transition: all 0.4s;
+      }
+
+      .single-step {
+        min-width: 100vw;
+        width: 100vw;
+        float: left;
+        overflow: auto;
+        scroll-behavior: smooth;
+
+        #error-home-type {
+          margin-bottom: 40px;
+          background: white;
+          width: 820px;
+          margin-left: auto;
+          margin-right: auto;
+          height: 170px;
+          justify-content: center;
+
+          h2,
+          h4 {
+            margin: 0 30px;
+            color: #ff6900;
+          }
+
+          h4 {
+            margin-top: 20px;
+          }
+
+          a {
+            text-decoration: underline;
+            color: inherit;
+          }
+        }
+
+        .roof-top {
+          width: 498px;
+          height: 31px;
+          font-size: 25px;
+          font-weight: normal;
+          color: #425563;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        #error-home {
+          margin-top: 70px;
+          background: white;
+          width: 820px;
+          margin-left: auto;
+          margin-right: auto;
+          height: 170px;
+          justify-content: center;
+          margin-bottom: 40px;
+
+          h2,
+          h4 {
+            margin-block-start: 0;
+            margin: 0 30px;
+            color: #ff6900;
+          }
+
+          h4 {
+            margin-top: 20px;
+          }
+
+          a {
+            text-decoration: underline;
+            color: inherit;
+          }
+        }
+
+        h2 {
+          margin-top: 30px;
+          font-size: 35px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          text-align: center;
+          color: #425563;
+        }
+
+        h4 {
+          margin-top: 10px;
+          font-size: 20px;
+          color: #425563;
+          font-weight: normal;
+        }
+
+        #error-credit-score {
+          background: white;
+          width: 820px;
+          margin-left: auto;
+          margin-right: auto;
+          height: 170px;
+          justify-content: center;
+          margin-bottom: 40px;
+
+          h2,
+          h4 {
+            margin: 0 30px;
+            color: #ff6900;
+          }
+
+          h4 {
+            margin-top: 20px;
+          }
+
+          a {
+            text-decoration: underline;
+            color: inherit;
+          }
+        }
+
+        .check-own-house {
+          margin-top: 45px;
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 700px;
+          margin: 45px auto;
+          justify-content: space-between;
+
+          .check-whole-area {
+            margin-right: 25px;
+            margin-bottom: 55px;
+            width: 250px;
+          }
+          .check-whole-area:hover {
+            cursor: pointer;
+            transition: all 0.4s;
+
+            .check {
+              box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+            }
+
+            span {
+              color: #425563;
+            }
+
+            path {
+              fill: #ff6900;
+            }
+          }
+
+          .check {
+            background-color: #ffffff;
+            border-radius: 50%;
+            width: 40.7px;
+            height: 40.7px;
+
+            svg {
+              margin: auto;
+            }
+          }
+
+          .active-box {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+            span {
+              color: #425563;
+            }
+
+            path {
+              fill: #ff6900;
+            }
+          }
+
+          span {
+            margin-top: 8px;
+            margin-left: 18px;
+            font-size: 25px;
+            color: #7d8d9a;
+          }
+        }
+
+        .active-taxable-income {
+          cursor: pointer;
+          transition: all 0.4s;
+
+          .taxable-income-circle {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+          }
+
+          span {
+            color: #425563;
+          }
+
+          path {
+            fill: #ff6900;
+          }
+        }
+
+        .taxable-income-options-all {
+          .tax-option:hover {
+            cursor: pointer;
+            transition: all 0.4s;
+
+            .taxable-income-circle {
+              box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+            }
+
+            span {
+              color: #425563;
+            }
+
+            path {
+              fill: #ff6900;
+            }
+          }
+
+          .tax-option {
+            margin-right: 40px;
+
+            .taxable-income-circle {
+              background: white;
+              border-radius: 50%;
+              width: 41px;
+              height: 41px;
+
+              svg {
+                margin: auto;
+              }
+            }
+          }
+
+          span {
+            margin-top: 8px;
+            margin-left: 10px;
+            font-size: 25px;
+            color: #7d8d9a;
+          }
+        }
+
+        .credit-options-all {
+          position: relative;
+          left: 30px;
+          margin-top: 45px;
+          flex-wrap: wrap;
+          max-width: 550px;
+          margin-left: auto;
+          margin-right: auto;
+
+          .tax-option:hover {
+            cursor: pointer;
+
+            span {
+              color: #425563;
+            }
+
+            .tax-type-circle {
+              box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+            }
+
+            #tax-circle-6 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/6.svg)
+                no-repeat 5px 8px;
+            }
+
+            #tax-circle-5 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/5.svg)
+                no-repeat 5px 8px;
+            }
+
+            #tax-circle-4 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/4.svg)
+                no-repeat 5px 8px;
+            }
+
+            #tax-circle-3 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/3.svg)
+                no-repeat 5px 8px;
+            }
+
+            #tax-circle-2 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/2.svg)
+                no-repeat 5px 8px;
+            }
+
+            #tax-circle-1 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/1.svg)
+                no-repeat center;
+            }
+          }
+
+          .tax-option {
+            margin-right: 65px;
+            margin-bottom: 27px;
+            width: 200px;
+            margin-left: 10px;
+
+            span {
+              margin-top: 18px;
+              margin-left: 10px;
+              color: #7d8d9a;
+            }
+
+            .tax-type-circle {
+              width: 50px;
+              height: 50px;
+              background: white;
+              border-radius: 50%;
+            }
+
+            #tax-circle-6 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/6_plain.svg)
+                no-repeat 5px 8px;
+            }
+
+            #tax-circle-5 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/5_plain.svg)
+                no-repeat 5px 8px;
+            }
+
+            #tax-circle-4 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/4_plain.svg)
+                no-repeat 5px 8px;
+            }
+
+            #tax-circle-3 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/3_plain.svg)
+                no-repeat 5px 8px;
+            }
+
+            #tax-circle-2 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/2_plain.svg)
+                no-repeat 5px 8px;
+            }
+
+            #tax-circle-1 {
+              background: white
+                url(https://shinesolar.github.io/Marketing-Funnel/img/1_plain.svg)
+                no-repeat center;
+            }
+          }
+        }
+
+        .home-options-all {
+          position: relative;
+          left: 30px;
+          margin-top: 45px;
+          flex-wrap: wrap;
+          max-width: 550px;
+          margin-left: auto;
+          margin-right: auto;
+
+          h2,
+          h4 {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .home-type-circle {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+          }
+
+          h2,
+          h4 {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .home-option:hover {
+            cursor: pointer;
+            transition: all 0.4s;
+
+            span {
+              color: #425563;
+            }
+
+            path {
+              fill: #ff6900;
+            }
+
+            .home-type-circle {
+              box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+            }
+          }
+
+          .active-house-type {
+            transition: all 0.4s;
+
+            span {
+              color: #425563;
+            }
+
+            path {
+              fill: #ff6900;
+            }
+
+            .home-type-circle {
+              box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+            }
+          }
+
+          .home-option {
+            margin-right: 65px;
+            margin-bottom: 27px;
+            width: 200px;
+            margin-left: 10px;
+
+            .home-type-circle {
+              background: white;
+              height: 60px;
+              width: 60px;
+              border-radius: 50%;
+
+              svg {
+                margin: auto;
+              }
+            }
+
+            span {
+              margin-top: 18px;
+              margin-left: 10px;
+              color: #7d8d9a;
+            }
+          }
+        }
+
+        .employment-options-all {
+          position: relative;
+          left: 30px;
+          margin-top: 45px;
+          flex-wrap: wrap;
+          max-width: 550px;
+          margin-left: auto;
+          margin-right: auto;
+
+          h2,
+          h4 {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .employment-type-circle {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+          }
+
+          h2,
+          h4 {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .employment-option:hover {
+            cursor: pointer;
+            transition: all 0.4s;
+
+            span {
+              color: #425563;
+            }
+
+            path {
+              fill: #ff6900;
+            }
+
+            .employment-type-circle {
+              box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+            }
+          }
+
+          .active-employment-type {
+            transition: all 0.4s;
+
+            span {
+              color: #425563;
+            }
+
+            path {
+              fill: #ff6900;
+            }
+
+            .employment-type-circle {
+              box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+            }
+          }
+
+          .employment-option {
+            margin-right: 65px;
+            margin-bottom: 27px;
+            width: 200px;
+            margin-left: 10px;
+
+            .employment-type-circle {
+              background: white;
+              height: 60px;
+              width: 60px;
+              border-radius: 50%;
+
+              svg {
+                margin: auto;
+              }
+            }
+
+            span {
+              margin-top: 18px;
+              margin-left: 10px;
+              color: #7d8d9a;
+            }
+          }
+        }
+
+        .address-box {
+          // margin-top: 25px;
+          max-width: 750px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: left;
+
+          span {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #7d8d9a;
+            margin-bottom: 5px;
+          }
+
+          input {
+            height: 50px;
+            border: none;
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #425563;
+            text-indent: 15px;
+            width: 500px;
+          }
+        }
+      }
+
+      .message-end {
+        margin-top: 30px;
+        max-width: 100vw;
+        align-self: center;
+        text-align: center;
+        padding: 0 50px;
+
+        .self-schedule {
+          margin-right: auto;
+          margin-left: auto;
+          position: relative;
+          // height:;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
+
+        .video-iframe {
+          overflow: hidden;
+          padding-bottom: 56.25%;
+          position: relative;
+          height: 0;
+          min-width: 300px;
+          max-width: 744px;
+
+          iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+          }
+        }
+
+        h4 {
+          // margin-top: -25px !important;
+          font-size: 45px;
+          color: #ff6900;
+          margin-left: 30px;
+          margin-right: 30px;
+        }
+
+        .top-finish {
+          max-width: 560px;
+          // margin-top: 30px;
+          font-size: 24px;
+          color: #425563;
+        }
+
+        .bottom-finish {
+          margin-top: 10px;
+          color: #7d8d9a;
+          font-size: 24px;
+          margin-bottom: 42px;
+        }
+      }
+    }
+  }
+}
+
+#slider-1:target ~ .wrap-steps {
+  top: 0;
+  left: 0px;
+}
+
+#slider-2:target ~ .wrap-steps {
+  top: 0;
+  left: -100vw;
+}
+
+#slider-3:target ~ .wrap-steps {
+  top: 0;
+  left: -200vw;
+}
+
+#slider-4:target ~ .wrap-steps {
+  top: 0;
+  left: -300vw;
+}
+
+#slider-5:target ~ .wrap-steps {
+  top: 0;
+  left: -400vw;
+}
+
+#slider-6:target ~ .wrap-steps {
+  top: 0;
+  left: -500vw;
+}
+
+#slider-7:target ~ .wrap-steps {
+  top: 0;
+  left: -600vw;
+}
+
+#slider-8:target ~ .wrap-steps {
+  top: 0;
+  left: -700vw;
+}
+
+#slider-9:target ~ .wrap-steps {
+  top: 0;
+  left: -800vw;
+}
+
+.shakeError {
+  -webkit-animation: shakeAnim 0.4s 1 linear;
+  -moz-animation: shakeAnim 0.4s 1 linear;
+  -o-animation: shakeAnim 0.4s 1 linear;
+}
+
+@-webkit-keyframes shakeAnim {
+  0% {
+    -webkit-transform: translate(30px);
+  }
+
+  20% {
+    -webkit-transform: translate(-30px);
+  }
+
+  40% {
+    -webkit-transform: translate(15px);
+  }
+
+  60% {
+    -webkit-transform: translate(-15px);
+  }
+
+  80% {
+    -webkit-transform: translate(8px);
+  }
+
+  100% {
+    -webkit-transform: translate(0px);
+  }
+}
+
+@-moz-keyframes shakeAnim {
+  0% {
+    -moz-transform: translate(30px);
+  }
+
+  20% {
+    -moz-transform: translate(-30px);
+  }
+
+  40% {
+    -moz-transform: translate(15px);
+  }
+
+  60% {
+    -moz-transform: translate(-15px);
+  }
+
+  80% {
+    -moz-transform: translate(8px);
+  }
+
+  100% {
+    -moz-transform: translate(0px);
+  }
+}
+
+// styling the map
+.pac-container,
+.pac-item {
+  font-size: 18px;
+}
+
+.pac-container {
+  z-index: 99999;
+}
+
+.pac-item-query {
+  font-size: 18px;
+}
+
+#map {
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  width: 600px;
+}
+
+.correct-roof {
+  width: 600px;
+  height: 100px;
+  margin: 15px auto;
+  border-radius: 20px;
+  color: white;
+
+  .maps-address {
+    background: #3dca59;
+    width: 130px;
+    margin-left: auto;
+    border-radius: 4px;
+
+    span {
+      text-align: center;
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+      font-size: 22px;
     }
 
+    .arrow {
+      margin-left: 25px;
+      font-size: 40px;
+    }
+  }
 }
 
 .gmnoprint {
-    display: none;
+  display: none;
 }
 
 #SOIDIV_EnergyEvaluation {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.check-whole-area.checking {
+  .orage-ball {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background: #ff6900;
+    margin: auto;
+  }
+}
+
+.wrap-attach {
+  // width: 600px;
+  margin: 0 auto;
+  cursor: pointer;
+  background: lightgray;
+  border-radius: 16px;
+  padding: 10px 5px;
+  .img {
+    width: 40px;
+    height: auto;
+  }
+  .click-here {
+    span {
+      margin: auto 10px;
+      font-size: 20px;
+    }
+  }
+}
+
+#help {
+  position: fixed;
+  top: 280px;
+  right: 230px;
+  z-index: 125125125125125125125125;
+  img {
+    height: 50px;
+    width: auto;
+    animation: shadow-pulse 1.5s infinite;
+  }
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 105, 0, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 0 15px rgba(255, 105, 0, 0);
+  }
+}
+
+@keyframes opacity-rotation {
+  0% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
 }
